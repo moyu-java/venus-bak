@@ -1,0 +1,29 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+
+# jasypt 加密密钥
+# 替换 encryptor_password 即可
+jasypt:
+  encryptor:
+    password: encryptor_password
+
+# 不打印 nacos 心跳日志
+# 2.0.4 版本的 nacos-client 需要测试是否会打印心跳日志
+logging:
+  level:
+    com.alibaba.nacos.client.naming: warn
+
+# 默认开启的监控端点，不能全部开放，有安全隐患
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - info
+          - health
+          - metrics
+          - prometheus
+  endpoint:
+    health:
+      show-details: ALWAYS

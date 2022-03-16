@@ -1,0 +1,9 @@
+### 获取 jasypt 密钥
+GET http://localhost:8083/nacos/config/common/password
+
+### 获取 venus-example-nacos-config.yaml 配置文件中参数
+GET http://localhost:8083/nacos/config/venus/author
+
+### 获取 venus-example-nacos-config-json.json 配置文件中参数
+GET http://localhost:8083/nacos/config/json
+

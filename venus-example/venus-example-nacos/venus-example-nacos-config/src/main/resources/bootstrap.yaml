@@ -1,0 +1,26 @@
+server:
+  port: 8083
+
+spring:
+  profiles:
+    active: local
+  application:
+    name: venus-example-nacos-config
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      username: ${nacos.username}
+      password: ${nacos.password}
+      config:
+        server-addr: ${nacos.server-addr}
+        namespace: ${nacos.namespace}
+        group: ${nacos.group}
+        file-extension: yaml
+        shared-configs:
+          - data-id: common-base.yaml
+            group: ${nacos.common-group}
+        extension-configs:
+          - data-id: venus-example-nacos-config-json.json
+            group: ${nacos.group}
+            refresh: true
