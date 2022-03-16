@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  */
 @FeignClient(value = "nacos-discovery-provider", fallback = ProviderFallback.class)
 public interface RemoteProviderClient {
+
     /**
      * nacos-discovery-provider 服务提供者对应的 REST 接口
      *

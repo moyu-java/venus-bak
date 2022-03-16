@@ -20,6 +20,7 @@ spring:
         group: ${nacos.group}
 
 # feign 降级策略
+# 更详细的 sentinel 降级策略因版本问题暂时无法配置
 # see https://github.com/alibaba/spring-cloud-alibaba/blob/2021.x/spring-cloud-alibaba-docs/src/main/asciidoc-zh/sca-upgrade-guide.adoc
 feign:
   circuitbreaker:

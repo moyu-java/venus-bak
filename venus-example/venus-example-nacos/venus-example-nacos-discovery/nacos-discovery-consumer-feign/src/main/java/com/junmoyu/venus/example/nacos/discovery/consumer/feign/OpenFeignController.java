@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
+ * nacos discovery consumer controller with openfeign.
+ *
  * @author moyu.jun
  * @date 2022/3/16
  */

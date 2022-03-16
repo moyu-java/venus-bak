@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * nacos discovery consumer controller.
+ * nacos discovery consumer controller with RestTemplate.
  *
  * @author moyu.jun
  * @date 2022/3/16

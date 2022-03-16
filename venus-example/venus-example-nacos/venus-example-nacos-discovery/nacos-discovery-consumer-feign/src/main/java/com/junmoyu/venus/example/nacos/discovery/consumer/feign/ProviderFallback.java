@@ -3,6 +3,8 @@ package com.junmoyu.venus.example.nacos.discovery.consumer.feign;
 import org.springframework.stereotype.Component;
 
 /**
+ * 当 nacos-discovery-provider 服务停止，将触发降级策略
+ *
  * @author moyu.jun
  * @date 2022/3/16
  */
