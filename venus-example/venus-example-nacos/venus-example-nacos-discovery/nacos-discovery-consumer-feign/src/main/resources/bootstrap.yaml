@@ -1,0 +1,26 @@
+server:
+  port: 8086
+
+spring:
+  profiles:
+    active: local
+  application:
+    name: nacos-discovery-consumer-feign
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      username: ${nacos.username}
+      password: ${nacos.password}
+      discovery:
+        enabled: true
+        register-enabled: true
+        server-addr: ${nacos.server-addr}
+        namespace: ${nacos.namespace}
+        group: ${nacos.group}
+
+# feign 降级策略
+# see https://github.com/alibaba/spring-cloud-alibaba/blob/2021.x/spring-cloud-alibaba-docs/src/main/asciidoc-zh/sca-upgrade-guide.adoc
+feign:
+  circuitbreaker:
+    enabled: true

@@ -15,5 +15,6 @@
     <modules>
         <module>nacos-discovery-provider</module>
         <module>nacos-discovery-consumer-rest</module>
+        <module>nacos-discovery-consumer-feign</module>
     </modules>
 </project>

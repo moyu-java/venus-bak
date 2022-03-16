@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * nacos discovery consumer example.
+ * nacos discovery consumer example with RestTemplate.
  *
  * @author moyu.jun
  * @date 2022/3/16
