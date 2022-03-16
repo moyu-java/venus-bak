@@ -34,7 +34,7 @@ public class RestTemplateController {
         // 使用 LoadBalanceClient 和 RestTemplate 结合的方式来访问
         // LoadBalanceClient 提供负载均衡的功能，并从 Nacos 中根据服务名获取服务实例
         ServiceInstance serviceInstance = loadBalancerClient.choose("nacos-discovery-provider");
-        String url = String.format("http://%s:%s/echo/%s", serviceInstance.getHost(), serviceInstance.getPort(), applicationName);
+        String url = String.format("http://%s:%s/nacos/discovery/provider/echo/%s", serviceInstance.getHost(), serviceInstance.getPort(), applicationName);
 
         log.info("request url: {}", url);
         return restTemplate.getForObject(url, String.class);
