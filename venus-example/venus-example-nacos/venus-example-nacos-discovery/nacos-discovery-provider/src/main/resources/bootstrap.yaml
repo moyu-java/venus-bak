@@ -1,0 +1,20 @@
+server:
+  port: 8084
+
+spring:
+  profiles:
+    active: local
+  application:
+    name: nacos-discovery-provider
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      username: ${nacos.username}
+      password: ${nacos.password}
+      discovery:
+        enabled: true
+        register-enabled: true
+        server-addr: ${nacos.server-addr}
+        namespace: ${nacos.namespace}
+        group: ${nacos.group}

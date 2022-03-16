@@ -1,0 +1,3 @@
+### consumer-rest: echo application name
+GET http://localhost:8085/nacos/discovery/consumer/rest/echo
+

@@ -1,0 +1,3 @@
+### echo message
+GET http://localhost:8084/nacos/discovery/provider/echo/james
+
