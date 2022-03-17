@@ -20,6 +20,7 @@
     <modules>
         <module>venus-example</module>
         <module>venus-starter</module>
+        <module>venus-gateway</module>
     </modules>
 
     <scm>
