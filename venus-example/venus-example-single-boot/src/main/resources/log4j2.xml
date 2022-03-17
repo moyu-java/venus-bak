@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Configuration后面的status，这个用于设置log4j2自身内部的信息输出，可以不设置，当设置成trace时，
+ 你会看到log4j2内部各种详细输出。可以设置成OFF(关闭)或Error(只输出错误信息)
+-->
+<Configuration status="OFF">
+    <!-- 日志文件目录和压缩文件目录配置 -->
+    <Properties>
+        <Property name="fileName">/venus/example-single-boot/logs</Property>
+        <Property name="fileGz">/venus/example-single-boot/logs/7z</Property>
+
+        <Property name="LOG_HOME">${sys:user.home}/logs</Property>
+        <!--<Property name="LOG_HOME">../logs</Property>-->
+        <!--<Property name="PATTERN">[%date{DEFAULT}] [%thread] [%-5level] TC:%x %logger{1.}.%method:%line - %msg%xEx%n</Property>-->
+        <Property name="LOG_EXCEPTION_CONVERSION_WORD">%xEx</Property>
+        <Property name="LOG_LEVEL_PATTERN">%5p</Property>
+        <Property name="LOG_DATE_FORMAT_PATTERN">yyyy-MM-dd HH:mm:ss.SSS</Property>
+        <!--<Property name="CONSOLE_LOG_PATTERN">%clr{%d{${LOG_DATE_FORMAT_PATTERN}}}{faint} %clr{${LOG_LEVEL_PATTERN}} %clr{${sys:PID}}{magenta} %clr{-&#45;&#45;}{faint} %clr{[%15.15t]}{faint} %clr{%-40.40c{1.}}{cyan} %clr{:}{faint} %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>-->
+        <Property name="CONSOLE_LOG_PATTERN">%style{%d{${LOG_DATE_FORMAT_PATTERN}}}{Dim} %highlight{${LOG_LEVEL_PATTERN}}{FATAL=white, ERROR=red, WARN=blue, INFO=black, DEBUG=green, TRACE=blue} %style{%-5pid}{Magenta} %style{---}{Dim} %style{[%15.15t]}{Dim} %style{%-40.40c{1.}}{Cyan} %style{%-4line}{Dim} %style{:}{Dim} %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>
+        <Property name="FILE_LOG_PATTERN">%d{${LOG_DATE_FORMAT_PATTERN}} ${LOG_LEVEL_PATTERN} %-5pid --- [%t] %-40.40c{1.} L%-4line : %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>
+
+    </Properties>
+    <Appenders>
+        <!-- 输出控制台日志的配置 -->
+        <Console name="console" target="SYSTEM_OUT">
+            <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
+<!--            <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>-->
+            <!-- 输出日志的格式 -->
+            <PatternLayout pattern="${sys:CONSOLE_LOG_PATTERN}"/>
+        </Console>
+
+        <!-- 打印出所有的信息，每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档 -->
+        <RollingRandomAccessFile name="infoFile" fileName="${fileName}/info.log" immediateFlush="false"
+                                 filePattern="${fileGz}/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.info.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} %L %M: %msg%xEx%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="6" modulate="true" />
+                <SizeBasedTriggeringPolicy size="50 MB"/>
+            </Policies>
+            <Filters>
+                <!-- 只记录info和warn级别信息 -->
+                <ThresholdFilter level="error" onMatch="DENY" onMismatch="NEUTRAL"/>
+                <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY" />
+            </Filters>
+            <!-- 指定每天的最大压缩包个数，默认7个，超过了会覆盖之前的 -->
+            <DefaultRolloverStrategy max="50"/>
+        </RollingRandomAccessFile>
+
+        <!-- 存储所有error信息 -->
+        <RollingRandomAccessFile name="errorFile" fileName="${fileName}/error.log" immediateFlush="false"
+                                 filePattern="${fileGz}/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.error.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} %L %M: %msg%xEx%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="6" modulate="true" />
+                <SizeBasedTriggeringPolicy size="50 MB"/>
+            </Policies>
+            <Filters>
+                <!-- 只记录error级别信息 -->
+                <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY" />
+            </Filters>
+            <!-- 指定每天的最大压缩包个数，默认7个，超过了会覆盖之前的 -->
+            <DefaultRolloverStrategy max="50"/>
+        </RollingRandomAccessFile>
+    </Appenders>
+
+    <!-- 全局配置，默认所有的Logger都继承此配置 -->
+    <Loggers>
+        <!-- AsyncRoot - 异步记录日志 - 需要LMAX Disruptor的支持 -->
+        <AsyncRoot level="info" additivity="false">
+            <AppenderRef ref="console"/>
+            <AppenderRef ref="infoFile"/>
+            <AppenderRef ref="errorFile"/>
+        </AsyncRoot>
+    </Loggers>
+</Configuration>

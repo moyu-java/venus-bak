@@ -9,12 +9,13 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>venus-example</artifactId>
+    <artifactId>venus-starter</artifactId>
     <packaging>pom</packaging>
 
     <modules>
-        <module>venus-example-nacos</module>
-        <module>venus-example-single-boot</module>
-        <module>venus-example-jasypt</module>
+
+        <module>venus-starter-core</module>
+        <module>venus-starter-mybatis</module>
+        <module>venus-starter-redis</module>
     </modules>
 </project>

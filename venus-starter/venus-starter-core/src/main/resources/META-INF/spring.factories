@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.junmoyu.venus.starter.core.config.JacksonConfig,\
+  com.junmoyu.venus.starter.core.exception.ExceptionHandlers

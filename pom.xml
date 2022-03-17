@@ -19,6 +19,7 @@
 
     <modules>
         <module>venus-example</module>
+        <module>venus-starter</module>
     </modules>
 
     <scm>
@@ -53,7 +54,6 @@
         <log4j2.version>2.17.1</log4j2.version>
         <lombok.version>1.18.12</lombok.version>
         <jackson.version>2.11.4</jackson.version>
-        <feign-core.version>10.12</feign-core.version>
         <disruptor.version>3.4.0</disruptor.version>
         <mapstruct.version>1.4.1.Final</mapstruct.version>
         <hutool.version>5.7.5</hutool.version>
@@ -103,6 +103,25 @@
                 </exclusions>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <!-- venus-starter 模块 -->
+            <dependency>
+                <groupId>com.junmoyu</groupId>
+                <artifactId>venus-starter-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.junmoyu</groupId>
+                <artifactId>venus-starter-mybatis</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.junmoyu</groupId>
+                <artifactId>venus-starter-redis</artifactId>
+                <version>${project.version}</version>
             </dependency>
 
             <!-- Nacos Client -->
