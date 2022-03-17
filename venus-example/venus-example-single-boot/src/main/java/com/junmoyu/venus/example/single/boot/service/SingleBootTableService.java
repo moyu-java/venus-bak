@@ -2,9 +2,12 @@ package com.junmoyu.venus.example.single.boot.service;
 
 import com.junmoyu.venus.example.single.boot.model.entity.SingleBootTable;
 import lombok.NonNull;
-import org.springframework.web.bind.annotation.PathVariable;
+
+import java.util.List;
 
 /**
+ * service interface.
+ *
  * @author moyu.jun
  * @date 2022/3/17
  */
@@ -38,4 +41,11 @@ public interface SingleBootTableService {
      * @param singleBootTable 数据对象
      */
     void update(@NonNull SingleBootTable singleBootTable);
+
+    /**
+     * 获取数据列表
+     *
+     * @return 数据列表
+     */
+    List<SingleBootTable> list();
 }

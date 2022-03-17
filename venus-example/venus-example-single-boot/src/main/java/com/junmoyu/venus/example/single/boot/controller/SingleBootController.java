@@ -6,7 +6,11 @@ import com.junmoyu.venus.starter.core.model.dto.Response;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
+ * Restful http interface example.
+ *
  * @author moyu.jun
  * @date 2022/3/17
  */
@@ -17,12 +21,11 @@ public class SingleBootController {
 
     private final SingleBootTableService singleBootTableService;
 
-    /**
-     * 获取一个数据对象
-     *
-     * @param id 主键
-     * @return {@link Response<SingleBootTable>}
-     */
+    @GetMapping("")
+    public Response<List<SingleBootTable>> list() {
+        return Response.success(singleBootTableService.list());
+    }
+
     @GetMapping("/{id}")
     public Response<SingleBootTable> getObject(@PathVariable Long id) {
         return Response.success(singleBootTableService.getObject(id));

@@ -12,6 +12,8 @@ public class ResponseMessage {
 
     public static final String FAILED = "failed";
 
+    public static final String REQUIRED_PARAM_IS_NULL = "request required parameter is null";
+
     public static final String CREATE_SUCCESS = "create success";
 
     public static final String DELETE_SUCCESS = "delete success";

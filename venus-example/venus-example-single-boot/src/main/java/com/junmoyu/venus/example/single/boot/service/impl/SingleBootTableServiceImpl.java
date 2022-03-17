@@ -1,5 +1,6 @@
 package com.junmoyu.venus.example.single.boot.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.junmoyu.venus.example.single.boot.mapper.SingleBootTableMapper;
 import com.junmoyu.venus.example.single.boot.model.entity.SingleBootTable;
 import com.junmoyu.venus.example.single.boot.service.SingleBootTableService;
@@ -9,12 +10,14 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ObjectUtils;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 /**
+ * service interface implement.
+ *
  * @author moyu.jun
  * @date 2022/3/17
  */
@@ -53,5 +56,17 @@ public class SingleBootTableServiceImpl implements SingleBootTableService {
         singleBootTable.setCreateTime(null);
         singleBootTable.setUpdateTime(new Date());
         singleBootTableMapper.updateById(singleBootTable);
+    }
+
+    @Override
+    public List<SingleBootTable> list() {
+        log.info("info");
+        log.warn("warn");
+        log.debug("debug");
+        log.error("error");
+        QueryWrapper<SingleBootTable> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq(SingleBootTable.COL_IS_DELETED, false);
+        queryWrapper.last("limit 10");
+        return singleBootTableMapper.selectList(queryWrapper);
     }
 }

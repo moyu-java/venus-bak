@@ -28,3 +28,9 @@ Content-Type: application/json
   "code": "code_test",
   "sort": 1
 }
+
+### 查询数据列表
+GET http://localhost:8087/single/boot/data
+
+### 从 redis 缓存中查询数据
+GET http://localhost:8087/single/boot/data/cache/3
