@@ -4,18 +4,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>venus</artifactId>
+        <artifactId>venus-example</artifactId>
         <groupId>com.junmoyu</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>venus-example</artifactId>
+    <artifactId>venus-example-jackson</artifactId>
     <packaging>pom</packaging>
 
     <modules>
-        <module>venus-example-nacos</module>
-        <module>venus-example-single-boot</module>
-        <module>venus-example-jasypt</module>
-        <module>venus-example-jackson</module>
+        <module>venus-example-jackson-rest</module>
+        <module>venus-example-jackson-feign</module>
     </modules>
 </project>
