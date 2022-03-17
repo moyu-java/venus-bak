@@ -1,7 +1,9 @@
 package com.junmoyu.venus.example.single.boot.controller;
 
+import com.junmoyu.venus.example.single.boot.model.dto.SingleBootPageQuery;
 import com.junmoyu.venus.example.single.boot.model.entity.SingleBootTable;
 import com.junmoyu.venus.example.single.boot.service.SingleBootTableService;
+import com.junmoyu.venus.starter.core.model.dto.PageResult;
 import com.junmoyu.venus.starter.core.model.dto.Response;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +26,11 @@ public class SingleBootController {
     @GetMapping("")
     public Response<List<SingleBootTable>> list() {
         return Response.success(singleBootTableService.list());
+    }
+
+    @GetMapping("/page")
+    public Response<PageResult<SingleBootTable>> page(SingleBootPageQuery pageQuery) {
+        return Response.success(singleBootTableService.page(pageQuery));
     }
 
     @GetMapping("/{id}")

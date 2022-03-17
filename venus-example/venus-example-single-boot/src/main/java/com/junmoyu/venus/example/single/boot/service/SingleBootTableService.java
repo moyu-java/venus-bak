@@ -1,6 +1,9 @@
 package com.junmoyu.venus.example.single.boot.service;
 
+import com.junmoyu.venus.example.single.boot.model.dto.SingleBootPageQuery;
 import com.junmoyu.venus.example.single.boot.model.entity.SingleBootTable;
+import com.junmoyu.venus.starter.core.model.dto.PageResult;
+import com.junmoyu.venus.starter.core.model.dto.TimePageQuery;
 import lombok.NonNull;
 
 import java.util.List;
@@ -48,4 +51,12 @@ public interface SingleBootTableService {
      * @return 数据列表
      */
     List<SingleBootTable> list();
+
+    /**
+     * 分页查询
+     *
+     * @param pageQuery 分页查询请求实体
+     * @return 分页查询结果
+     */
+    PageResult<SingleBootTable> page(@NonNull SingleBootPageQuery pageQuery);
 }

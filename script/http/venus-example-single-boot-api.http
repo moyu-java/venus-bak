@@ -6,7 +6,7 @@ POST http://localhost:8087/single/boot/data
 Content-Type: application/json
 
 {
-  "name": "james",
+  "name": "james11",
   "code": "fake_code",
   "secret": "TQYx61Laba0c95HGj6Zw",
   "description": "fake_data",
@@ -31,6 +31,9 @@ Content-Type: application/json
 
 ### 查询数据列表
 GET http://localhost:8087/single/boot/data
+
+### 分页查询数据
+GET http://localhost:8087/single/boot/data/page?currentPage=1&pageSize=3&name=james
 
 ### 从 redis 缓存中查询数据
 GET http://localhost:8087/single/boot/data/cache/3
