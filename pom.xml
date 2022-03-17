@@ -39,8 +39,8 @@
 
         <nacos-client.version>2.0.4</nacos-client.version>
         <spring-cloud-gateway.version>3.1.1</spring-cloud-gateway.version>
-        <spring-boot-admin.version>2.4.3</spring-boot-admin.version>
-        <spring-cloud-openfeign.version>3.0.3</spring-cloud-openfeign.version>
+        <spring-boot-admin.version>2.6.2</spring-boot-admin.version>
+        <spring-cloud-openfeign.version>3.1.1</spring-cloud-openfeign.version>
         <spring-cloud-oauth2.version>2.2.5.RELEASE</spring-cloud-oauth2.version>
 
         <jasypt-spring-boot.version>3.0.4</jasypt-spring-boot.version>
@@ -76,8 +76,6 @@
         <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
         <versions-maven-plugin.version>2.7</versions-maven-plugin.version>
 
-        <!-- excel导出相关 -->
-        <easy-excel.version>3.0.2</easy-excel.version>
         <skipTests>true</skipTests>
     </properties>
 
