@@ -1,0 +1,2 @@
+### 开启三个 nacos-discovery-provider 并测试
+GET http://localhost:8000/nacos-discovery-provider/nacos/discovery/provider/echo/gateway

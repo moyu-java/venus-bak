@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: nacos-discovery-provider-route
+          uri: lb://nacos-discovery-provider
+          order: 1
+          filters:
+            - StripPrefix=1
+          predicates:
+            - Path=/nacos-discovery-provider/**

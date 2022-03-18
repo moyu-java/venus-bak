@@ -32,7 +32,3 @@ spring:
         shared-configs:
           - data-id: common-base.yaml
             group: ${nacos.common-group}
-        extension-configs:
-          - data-id: venus-gateway-routes.yaml
-            group: ${nacos.group}
-            refresh: true
