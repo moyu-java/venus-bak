@@ -1,0 +1,26 @@
+version: "3"
+services:
+  nacos:
+    image: nacos/nacos-server:v2.0.4
+    container_name: nacos
+    volumes:
+      - ./logs:/home/nacos/logs
+      - ./data:/home/nacos/data
+      - ./config/custom.properties:/home/nacos/init.d/custom.properties
+    environment:
+      - "MODE=standalone"
+      - "NACOS_APPLICATION_PORT=8848"
+      - "SPRING_DATASOURCE_PLATFORM=mysql"
+      - "MYSQL_SERVICE_HOST=192.168.1.37"
+      - "MYSQL_SERVICE_PORT=3306"
+      - "MYSQL_SERVICE_DB_NAME=nacos"
+      - "MYSQL_SERVICE_USER=james"
+      - "MYSQL_SERVICE_PASSWORD=James2020"
+      - "NACOS_AUTH_ENABLE=true"
+      - "JVM_XMS=2g"
+      - "JVM_XMX=2g"
+      - "JVM_XMN=1g"
+    ports:
+      - 8848:8848
+      - 9848:9848
+    restart: always
