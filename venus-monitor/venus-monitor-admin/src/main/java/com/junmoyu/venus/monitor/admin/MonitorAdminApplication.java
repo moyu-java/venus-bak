@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * 监控服务启动器
+ * spring boot admin 监控服务启动器
  *
  * @author moyu.jun
  * @date 2022/3/19
