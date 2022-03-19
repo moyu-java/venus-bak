@@ -29,7 +29,7 @@ password: DEC(123456)
 使用命令进行加密：
 
 ```shell
-mvn jasypt:encrypt -D jasypt.encryptor.password="encrypt_password" -D jasypt.plugin.path="file:src/main/resources/application.yaml"
+mvn jasypt:encrypt -D jasypt.plugin.path="file:src/main/resources/application.yaml" -D jasypt.encryptor.password="encrypt_password"
 ```
 加密结果如下：
 

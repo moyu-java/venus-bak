@@ -1,5 +1,9 @@
 mysql:
-  username: DEC(root)
-  password: DEC(V3Gezdrp1q3YD4mexFa1PzwN)
+  username: ENC(NfSPs5gLK1pxe6RVrz23m5YiGteaR24MxXfPz8/fvFPl3zhACv2RzmuX2z4O5skc)
+  password: ENC(Hgq8PxCL+L1+mgyjT4Ckk550LmsQhMF2E4KzolAl7gUapgx9pEfiEhOvOPgtiiqQ1H2EA2Syt/ybYjXub6dmtw==)
 redis:
-  password: DEC(q4dkpDgTweEk3c0VJW3E)
+  password: ENC(wk/X74N5wdQseZl9or0wp/CM8mIp1zCdhrHhYWbN4uLiYQtcl1ojpidEcIEA+MDHnnOBaILQB7jCdR7j8fgcXA==)
+boot:
+  admin:
+    username: ENC(v887/Av0tsotRdDvt4/AjjjyNsZKAYuF3PGW8A9wS6FWeOxKRbsoKHq6eh+fXrTI)
+    password: ENC(JNyIQcn9ScwJu3ELlr/obNPwvrgHfKS064AYIAIxwmBm6tdcfto33ETePNho5/7ZkNxCG7w4LQvZEWjOrsFzFg==)

@@ -1,0 +1,30 @@
+mail:
+  username: venus.cloud@qq.com
+  password: imap_smtp_authorization_code
+  to: moyu.j@qq.com
+
+spring:
+  security:
+    user:
+      name: ENC(sE4jV0qvbyOWwth+eeZXrIPcuWUF/7aV15wDyba/Zyg576PDoUtx6ZczvDHJoit8)
+      password: ENC(3Q5w6UugKCGHIJBp9M690ltBclNKsDppHTIJunmoDcwCEV1BZMnUAfiPRck/hPKxiqn4cw3KrYBrzV143jNY0w==)
+  boot:
+    admin:
+      notify:
+        mail:
+          to: ${mail.to}
+          from: ${mail.username}
+          ignore-changes: ""
+  mail:
+    host: smtp.qq.com
+    protocol: smtp
+    username: ${mail.username}
+    password: ${mail.password}
+    default-encoding: UTF-8
+    properties.mail.smtp.auth: true
+    properties.mail.smtp.port: 465
+    properties.mail.smtp.display.sendmail: ${mail.username}
+    properties.mail.smtp.display.sendname: venus.cloud
+    properties.mail.smtp.starttls.enable: true
+    properties.mail.smtp.starttls.required: true
+    properties.mail.smtp.ssl.enable: true

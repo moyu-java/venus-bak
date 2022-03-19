@@ -21,6 +21,7 @@
         <module>venus-example</module>
         <module>venus-starter</module>
         <module>venus-gateway</module>
+        <module>venus-monitor</module>
     </modules>
 
     <scm>
