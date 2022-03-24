@@ -1,8 +1,6 @@
 package com.junmoyu.venus.gateway.filter;
 
-import cn.hutool.core.net.Ipv4Util;
 import com.junmoyu.venus.gateway.util.ServletUtils;
-import com.junmoyu.venus.starter.core.util.IpUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
@@ -10,9 +8,6 @@ import org.springframework.core.Ordered;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
-import sun.net.util.IPAddressUtil;
-
-import java.net.InetSocketAddress;
 
 /**
  * IP 黑名单过滤器

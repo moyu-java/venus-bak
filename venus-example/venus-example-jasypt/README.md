@@ -57,7 +57,7 @@ mvn jasypt:encrypt -D jasypt.plugin.path="file:src/main/resources/application.ya
 公钥加密：
 
 ```shell
-mvn jasypt:encrypt-value -D spring.config.location="file:src/main/resources/application.yaml" -D jasypt.encryptor.public-key-format="PEM" -D jasypt.encryptor.public-key-location="file:src/main/resources/publickey.pem" -D jasypt.plugin.value="shiduai"
+mvn jasypt:encrypt-value -D spring.config.location="file:src/main/resources/application.yaml" -D jasypt.encryptor.public-key-format="PEM" -D jasypt.encryptor.public-key-location="file:src/main/resources/publickey.pem" -D jasypt.plugin.value="venus"
 ```
 
 解密测试：

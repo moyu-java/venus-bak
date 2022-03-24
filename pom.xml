@@ -62,7 +62,7 @@
         <pinyin4j.version>2.5.0</pinyin4j.version>
 
         <!-- OSS aws-java-sdk-s3 -->
-        <aws.version>1.12.74</aws.version>
+        <aws.version>1.12.183</aws.version>
 
         <guava.version>30.1-jre</guava.version>
         <commons-io.version>2.11.0</commons-io.version>

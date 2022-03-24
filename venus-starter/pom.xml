@@ -17,5 +17,6 @@
         <module>venus-starter-core</module>
         <module>venus-starter-mybatis</module>
         <module>venus-starter-redis</module>
+        <module>venus-starter-oss</module>
     </modules>
 </project>
