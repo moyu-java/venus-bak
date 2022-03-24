@@ -1,2 +1,5 @@
 ### 开启三个 nacos-discovery-provider 并测试
 GET http://localhost:8000/nacos-discovery-provider/nacos/discovery/provider/echo/gateway
+
+### 验证 IP 黑名单过滤器
+GET http://127.0.0.1:8000/nacos-discovery-provider/nacos/discovery/provider/echo/gateway
