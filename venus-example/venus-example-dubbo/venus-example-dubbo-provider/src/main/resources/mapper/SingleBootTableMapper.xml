@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.junmoyu.venus.example.dubbo.provider.mapper.SingleBootTableMapper">
+  <resultMap id="BaseResultMap" type="com.junmoyu.venus.example.dubbo.api.model.entity.SingleBootTable">
+    <!--@Table single_boot_table-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="secret" jdbcType="VARCHAR" property="secret" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="icon" jdbcType="VARCHAR" property="icon" />
+    <result column="banner" jdbcType="VARCHAR" property="banner" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="is_deleted" jdbcType="TINYINT" property="deleted" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, `name`, code, secret, description, icon, banner, sort, is_deleted, create_time, 
+    update_time
+  </sql>
+  <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
+    insert into single_boot_table
+    (`name`, code, secret, description, icon, banner, sort, is_deleted, create_time, 
+      update_time)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.name,jdbcType=VARCHAR}, #{item.code,jdbcType=VARCHAR}, #{item.secret,jdbcType=VARCHAR}, 
+        #{item.description,jdbcType=VARCHAR}, #{item.icon,jdbcType=VARCHAR}, #{item.banner,jdbcType=VARCHAR}, 
+        #{item.sort,jdbcType=INTEGER}, #{item.deleted,jdbcType=TINYINT}, #{item.createTime,jdbcType=TIMESTAMP},
+        #{item.updateTime,jdbcType=TIMESTAMP})
+    </foreach>
+  </insert>
+</mapper>

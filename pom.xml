@@ -41,7 +41,7 @@
         <spring-cloud-alibaba.verion>2021.1</spring-cloud-alibaba.verion>
 
         <nacos-client.version>2.0.4</nacos-client.version>
-        <dubbo.version>2.7.15</dubbo.version>
+        <dubbo.version>3.0.6</dubbo.version>
         <spring-cloud-gateway.version>3.1.1</spring-cloud-gateway.version>
         <spring-boot-admin.version>2.6.2</spring-boot-admin.version>
         <spring-cloud-openfeign.version>3.1.1</spring-cloud-openfeign.version>
@@ -157,19 +157,6 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-oauth2</artifactId>
                 <version>${spring-cloud-oauth2.version}</version>
-            </dependency>
-
-            <!-- Dubbo 监控 -->
-            <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-spring-boot-actuator</artifactId>
-                <version>${dubbo.version}</version>
-            </dependency>
-            <!-- Dubbo kryo 序列化 -->
-            <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-serialization-kryo</artifactId>
-                <version>${dubbo.version}</version>
             </dependency>
 
             <!-- 数据源相关 -->

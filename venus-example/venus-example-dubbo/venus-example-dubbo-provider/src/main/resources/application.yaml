@@ -1,0 +1,32 @@
+dubbo:
+  application:
+    name: ${spring.application.name}
+    id: ${spring.application.name}
+  cloud:
+    subscribed-services: ""
+  scan:
+    base-packages: com.junmoyu.venus.example.dubbo.provider.service
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: nacos://${nacos.server-addr}
+  provider:
+    loadbalance: random
+
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/venus_example?characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: ENC(R51ZR8wEjCjHP71xWMCax/XMn2m4/R3tMJbAZVYUkTxYdVd2f6eDDrMZ0l0iAtfC)
+    password: ENC(FdBYNWltUJOwXkH+Xo1H4RJHWW1x/FSZRFaHl5OqtujhgXthXpYDzMd2rofCQryVtQpGkqewcG0K5YmT6A6sMg==)
+    hikari:
+      pool-name: HikariCP
+      minimum-idle: 5
+      idle-timeout: 180000
+      maximum-pool-size: 10
+      auto-commit: true
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
