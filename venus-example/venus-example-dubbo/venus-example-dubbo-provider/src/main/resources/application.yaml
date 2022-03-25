@@ -10,7 +10,7 @@ dubbo:
     name: dubbo
     port: -1
   registry:
-    address: nacos://${nacos.server-addr}
+    address: nacos://${nacos.server-addr}?username=${nacos.username}&password=${nacos.password}&group=${nacos.group}&namespace=${nacos.namespace}
   provider:
     loadbalance: random
 
