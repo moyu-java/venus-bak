@@ -20,7 +20,7 @@ public class VenusException extends RuntimeException {
      * @param message the message
      */
     public VenusException(final String message) {
-        this(ResponseCode.SUCCESS, message);
+        this(ResponseCode.ERROR, message);
     }
 
     /**
@@ -41,7 +41,7 @@ public class VenusException extends RuntimeException {
      * @param e       the throwable
      */
     public VenusException(final String message, final Throwable e) {
-        this(ResponseCode.SUCCESS, message, e);
+        this(ResponseCode.ERROR, message, e);
     }
 
     /**

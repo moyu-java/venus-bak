@@ -1,5 +1,6 @@
 package com.junmoyu.venus.example.nacos.discovery.provider;
 
+import com.junmoyu.venus.starter.core.exception.VenusException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,5 +22,10 @@ public class NacosDiscoveryProviderController {
     public String echo(@PathVariable String message) {
         log.info("Hello nacos discovery. message is {}.", message);
         return "Hello nacos discovery. message is " + message;
+    }
+
+    @GetMapping("/exception")
+    public String exception() {
+        throw new VenusException("custom exception.");
     }
 }
