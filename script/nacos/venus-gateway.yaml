@@ -9,7 +9,7 @@ spring:
             - StripPrefix=1
             - RequestTime=true # 自定义局部过滤器 - 请求时间统计
             - name: BlacklistUrl # 自定义局部过滤器 - URL 黑名单过滤
-              args:
+              args: # 参数是 List 直接使用类似于 RequestTime 的方式不行
                 BlacklistUrl: /exception/**,/nacos/discovery/provider/exception/** # 多个参数使用 , 隔开
           predicates:
             - Path=/nacos-discovery-provider/**
