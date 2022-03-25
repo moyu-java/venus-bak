@@ -14,10 +14,7 @@ import java.util.List;
 /**
  * 局部过滤器 - 请求时间统计
  * 需要设置 spring.cloud.gateway.discovery.locator.enabled=false 局部过滤器才可生效
- * <p>
- * 设置方式：
- * filters:
- * - RequestTime=true
+ * 配置方式见 /script/nacos/venus-gateway.yaml
  *
  * @author moyu.jun
  * @date 2022/3/25

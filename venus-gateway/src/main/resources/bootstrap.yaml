@@ -9,8 +9,6 @@ spring:
   main:
     allow-bean-definition-overriding: true
   cloud:
-    gateway:
-      enabled: true
     nacos:
       username: ${nacos.username}
       password: ${nacos.password}

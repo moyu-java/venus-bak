@@ -7,5 +7,6 @@ spring:
           order: 1
           filters:
             - StripPrefix=1
+            - RequestTime=true # 自定义局部过滤器 - 请求时间统计
           predicates:
             - Path=/nacos-discovery-provider/**
