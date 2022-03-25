@@ -19,13 +19,14 @@ import reactor.core.publisher.Mono;
 @Component
 public class IpBlackListFilter implements GlobalFilter, Ordered {
 
+    private static final String LOCAL_IP = "127.0.0.1";
+
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         // 具体实现可以通过 Redis 的布隆过滤器判断远程 host 所处 IP 是否存在黑名单中
         String host = exchange.getRequest().getURI().getHost();
 
-        log.info("远程访问地址：{}", host);
-        if ("127.0.0.1".equals(host)) {
+        if (LOCAL_IP.equals(host)) {
             return ServletUtils.webFluxResponseWriter(exchange.getResponse(), "请求地址不允许访问");
         }
         return chain.filter(exchange);
