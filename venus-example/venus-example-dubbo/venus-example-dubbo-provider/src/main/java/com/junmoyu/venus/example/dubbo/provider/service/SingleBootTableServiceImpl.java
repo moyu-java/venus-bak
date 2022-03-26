@@ -72,6 +72,7 @@ public class SingleBootTableServiceImpl implements SingleBootTableService {
 
     @Override
     public PageResult<SingleBootTable> page(@NonNull SingleBootPageQuery pageQuery) {
+        log.info("dubbo provider page method invoked.");
         QueryWrapper<SingleBootTable> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq(SingleBootTable.COL_IS_DELETED, false);
         if (StringUtils.isNotBlank(pageQuery.getName())) {

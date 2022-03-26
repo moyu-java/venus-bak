@@ -41,7 +41,7 @@
         <spring-cloud-alibaba.verion>2021.0.1.0</spring-cloud-alibaba.verion>
 
         <nacos-client.version>2.0.4</nacos-client.version>
-        <dubbo.version>2.7.15</dubbo.version>
+<!--        <dubbo.version>2.7.15</dubbo.version>-->
         <spring-cloud-gateway.version>3.1.1</spring-cloud-gateway.version>
         <spring-boot-admin.version>2.6.2</spring-boot-admin.version>
         <spring-cloud-openfeign.version>3.1.1</spring-cloud-openfeign.version>
@@ -132,24 +132,6 @@
                 <groupId>com.alibaba.nacos</groupId>
                 <artifactId>nacos-client</artifactId>
                 <version>${nacos-client.version}</version>
-            </dependency>
-
-            <!-- Dubbo -->
-            <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo</artifactId>
-                <version>${dubbo.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-spring-boot-starter</artifactId>
-                <version>${dubbo.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-registry-nacos</artifactId>
-                <version>${dubbo.version}</version>
             </dependency>
 
             <!-- Spring Boot -->

@@ -1,0 +1,39 @@
+### 获取一个数据对象
+GET http://localhost:8095/dubbo/single/boot/data/3
+
+### 添加一个数据对象
+POST http://localhost:8095/dubbo/single/boot/data
+Content-Type: application/json
+
+{
+  "name": "james11",
+  "code": "fake_code",
+  "secret": "TQYx61Laba0c95HGj6Zw",
+  "description": "fake_data",
+  "icon": "fa-user",
+  "banner": "https://image.junmoyu.com/123456789.png",
+  "sort": 79
+}
+
+### 删除数据
+DELETE http://localhost:8095/dubbo/single/boot/data/2
+
+### 更新数据
+PUT http://localhost:8095/dubbo/single/boot/data
+Content-Type: application/json
+
+{
+  "id": 3,
+  "name": "moyu",
+  "code": "code_test",
+  "sort": 1
+}
+
+### 查询数据列表
+GET http://localhost:8095/dubbo/single/boot/data
+
+### 分页查询数据
+GET http://localhost:8095/dubbo/single/boot/data/page?currentPage=1&pageSize=3&name=james
+
+### 从 redis 缓存中查询数据
+GET http://localhost:8095/dubbo/single/boot/data/cache/3

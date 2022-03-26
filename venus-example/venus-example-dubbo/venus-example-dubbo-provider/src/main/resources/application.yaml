@@ -10,11 +10,14 @@ dubbo:
     name: dubbo
     port: -1
   registry:
-    address: nacos://${nacos.server-addr}?username=${nacos.username}&password=${nacos.password}&group=${nacos.group}&namespace=${nacos.namespace}
+    address: spring-cloud://localhost
   provider:
     loadbalance: random
 
+# 必须开启允许循环依赖，否则会报错
 spring:
+  main:
+    allow-circular-references: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver

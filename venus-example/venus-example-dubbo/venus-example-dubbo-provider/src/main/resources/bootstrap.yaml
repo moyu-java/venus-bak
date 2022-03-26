@@ -1,5 +1,5 @@
 server:
-  port: 8090
+  port: 8092
 
 spring:
   profiles:
@@ -12,6 +12,12 @@ spring:
     nacos:
       username: ${nacos.username}
       password: ${nacos.password}
+      discovery:
+        enabled: true
+        register-enabled: true
+        server-addr: ${nacos.server-addr}
+        namespace: ${nacos.namespace}
+        group: ${nacos.group}
       config:
         server-addr: ${nacos.server-addr}
         namespace: ${nacos.namespace}

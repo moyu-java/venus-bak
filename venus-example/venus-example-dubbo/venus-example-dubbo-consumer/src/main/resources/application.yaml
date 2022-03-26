@@ -1,0 +1,16 @@
+dubbo:
+  application:
+    name: ${spring.application.name}
+    id: ${spring.application.name}
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: spring-cloud://localhost
+  cloud:
+    subscribed-services: dubbo-provider
+
+# 必须开启允许循环依赖，否则会报错
+spring:
+  main:
+    allow-circular-references: true
