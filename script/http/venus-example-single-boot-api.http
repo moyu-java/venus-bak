@@ -1,5 +1,5 @@
 ### 获取一个数据对象
-GET http://localhost:8087/single/boot/data/1
+GET http://localhost:8087/single/boot/data/3
 
 ### 添加一个数据对象
 POST http://localhost:8087/single/boot/data
