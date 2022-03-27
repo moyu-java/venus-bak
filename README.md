@@ -8,4 +8,5 @@
 | Spring Cloud         | 2021.0.1 |     |
 | Spring Cloud Alibaba | 2021.1   |     |
 | Nacos                | 2.0.4    |     |
+| Dubbo                | 2.7.15   |     |
 | ...                  |          |     |
