@@ -21,6 +21,6 @@ services:
       - "JVM_XMX=2g"
       - "JVM_XMN=1g"
     ports:
-      - 8848:8848
-      - 9848:9848
+      - "8848:8848"
+      - "9848:9848"
     restart: always
