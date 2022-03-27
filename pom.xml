@@ -41,7 +41,7 @@
         <spring-cloud-alibaba.verion>2021.0.1.0</spring-cloud-alibaba.verion>
 
         <nacos-client.version>2.0.4</nacos-client.version>
-<!--        <dubbo.version>2.7.15</dubbo.version>-->
+        <!--        <dubbo.version>2.7.15</dubbo.version>-->
         <spring-cloud-gateway.version>3.1.1</spring-cloud-gateway.version>
         <spring-boot-admin.version>2.6.2</spring-boot-admin.version>
         <spring-cloud-openfeign.version>3.1.1</spring-cloud-openfeign.version>
@@ -61,6 +61,7 @@
         <mapstruct.version>1.4.1.Final</mapstruct.version>
         <hutool.version>5.7.5</hutool.version>
         <pinyin4j.version>2.5.0</pinyin4j.version>
+        <okhttp.version>4.9.3</okhttp.version>
 
         <!-- OSS aws-java-sdk-s3 -->
         <aws.version>1.12.183</aws.version>
@@ -69,6 +70,9 @@
         <commons-io.version>2.11.0</commons-io.version>
         <commons-lang3.version>3.11</commons-lang3.version>
         <commons-collections4.version>4.4</commons-collections4.version>
+
+        <!-- 第三方平台 -->
+        <wx-java.version>4.2.0</wx-java.version>
 
         <!-- 插件相关参数 -->
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
@@ -253,6 +257,20 @@
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct-processor</artifactId>
                 <version>${mapstruct.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${okhttp.version}</version>
+            </dependency>
+
+            <!-- 第三方平台 -->
+            <!-- 微信小程序 -->
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>wx-java-miniapp-spring-boot-starter</artifactId>
+                <version>${wx-java.version}</version>
             </dependency>
 
         </dependencies>

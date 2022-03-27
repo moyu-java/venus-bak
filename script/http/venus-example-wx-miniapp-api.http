@@ -1,0 +1,2 @@
+### 获取 access token
+GET http://localhost:8097/wx/token
