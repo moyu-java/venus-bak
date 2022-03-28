@@ -352,7 +352,7 @@
                 </configuration>
             </plugin>
 
-            <!-- 用于构建 release 版本，实现自动打tag、递增版本号、分发 release 版本 ja r包至仓库 -->
+            <!-- 用于构建 release 版本，实现自动打tag、递增版本号、分发 release 版本 jar 包至仓库 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
