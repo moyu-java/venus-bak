@@ -4,7 +4,7 @@
 
 | 组件                   | 版本       | 备注  |
 |----------------------|----------|-----|
-| Spring Boot          | 2.6.4    |     |
+| Spring Boot          | 2.6.5    |     |
 | Spring Cloud         | 2021.0.1 |     |
 | Spring Cloud Alibaba | 2021.1   |     |
 | Nacos                | 2.0.4    |     |
