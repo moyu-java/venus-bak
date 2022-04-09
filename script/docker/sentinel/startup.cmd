@@ -1,0 +1,1 @@
+java -Dserver.port=8883 -Dcsp.sentinel.dashboard.server=localhost:8883 -Dproject.name=sentinel-dashboard -Dsentinel.nacos.serverAddress=localhost:8848 -Dsentinel.nacos.username=nacos -Dsentinel.nacos.password=nacos -Dsentinel.nacos.namespace=ee934a2b-ccf9-48a8-aa1b-6adaeb40d4a5 -jar sentinel-dashboard-1.8.3.jar
