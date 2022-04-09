@@ -2,6 +2,8 @@
 
 > `sentinel-dashboard-1.8.3.jar` 是添加了自定义数据源持久化的启动包，使用 Nacos 作为规则持久化数据源。
 
+[项目源码](https://github.com/moyu-jun/Sentinel/tree/release-1.8)
+
 ## 配置方式
 
 Sentinel 提供如下的配置方式：
