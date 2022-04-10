@@ -1,0 +1,19 @@
+server:
+  port: 8098
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - info
+          - health
+          - metrics
+          - prometheus
+  endpoint:
+    health:
+      show-details: ALWAYS

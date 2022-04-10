@@ -19,5 +19,6 @@
         <module>venus-example-jackson</module>
         <module>venus-example-dubbo</module>
         <module>venus-example-wx</module>
+        <module>venus-example-actuator</module>
     </modules>
 </project>
