@@ -48,12 +48,6 @@ public class ExceptionHandlers {
         return Response.failure("unique index conflict, please enter again");
     }
 
-//    @ExceptionHandler(UnauthorizedException.class)
-//    protected Response<String> handleUnauthorizedException(final UnauthorizedException exception) {
-//        log.error("unauthorized exception", exception);
-//        return Response.failure(CommonErrorCode.TOKEN_NO_PERMISSION, ShenyuResultMessage.TOKEN_HAS_NO_PERMISSION);
-//    }
-
     @ExceptionHandler(NullPointerException.class)
     protected Response<String> handleNullPointException(final NullPointerException exception) {
         log.error("null pointer exception ", exception);

@@ -128,13 +128,13 @@ public class PinYinUtils {
      * @param str 字符串
      * @return ASCII码
      */
-    public static String getCnASCII(String str) {
+    public static String getCnAscii(String str) {
         StringBuffer buf = new StringBuffer();
         //将字符串转换成字节序列
-        byte[] bGBK = str.getBytes();
-        for (int i = 0; i < bGBK.length; i++) {
+        byte[] bGbk = str.getBytes();
+        for (int i = 0; i < bGbk.length; i++) {
             //将每个字符转换成ASCII码
-            buf.append(Integer.toHexString(bGBK[i] & 0xff));
+            buf.append(Integer.toHexString(bGbk[i] & 0xff));
         }
         return buf.toString();
     }
