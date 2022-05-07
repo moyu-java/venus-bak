@@ -5,8 +5,8 @@
 <Configuration status="OFF">
     <!-- 日志文件目录和压缩文件目录配置 -->
     <Properties>
-        <Property name="fileName">/venus/example-single-boot/logs</Property>
-        <Property name="fileGz">/venus/example-single-boot/logs/7z</Property>
+        <Property name="fileName">./logs</Property>
+        <Property name="fileGz">./logs/7z</Property>
 
         <Property name="LOG_EXCEPTION_CONVERSION_WORD">%xEx</Property>
         <Property name="LOG_LEVEL_PATTERN">%5p</Property>

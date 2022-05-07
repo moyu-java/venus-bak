@@ -39,6 +39,9 @@ public class SingleBootTableServiceImpl implements SingleBootTableService {
 
     @Override
     public void addObject(@NonNull SingleBootTable singleBootTable) {
+        if(StringUtils.isBlank(singleBootTable.getName()) || StringUtils.isBlank(singleBootTable.getCode())){
+            throw new VenusException(ResponseMessage.REQUIRED_PARAM_IS_NULL);
+        }
         singleBootTable.setId(null);
         singleBootTable.setDeleted(false);
         singleBootTable.setCreateTime(new Date());
