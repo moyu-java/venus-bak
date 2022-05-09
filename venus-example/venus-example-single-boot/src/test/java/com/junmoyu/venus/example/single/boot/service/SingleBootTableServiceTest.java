@@ -15,6 +15,8 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
 
 /**
  * @author moyu
@@ -35,6 +37,8 @@ public class SingleBootTableServiceTest {
     @Test
     @Order(1)
     public  void getObject() {
+
+
     }
 
     @Test
@@ -98,7 +102,9 @@ public class SingleBootTableServiceTest {
 
     public void testCreateSuccess(){
         assertDoesNotThrow(()->{
-            singleBootTableService.addObject(singleBootTable);
+            when(singleBootTableMapper.insert(any())).thenReturn(1);
+            int i = singleBootTableService.addObject(singleBootTable);
+            assertEquals(1, i);
         });
     }
 }

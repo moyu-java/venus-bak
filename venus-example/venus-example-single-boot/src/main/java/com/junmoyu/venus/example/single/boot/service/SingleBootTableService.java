@@ -29,7 +29,7 @@ public interface SingleBootTableService {
      *
      * @param singleBootTable 数据对象
      */
-    void addObject(@NonNull SingleBootTable singleBootTable);
+    int addObject(@NonNull SingleBootTable singleBootTable);
 
     /**
      * 删除数据

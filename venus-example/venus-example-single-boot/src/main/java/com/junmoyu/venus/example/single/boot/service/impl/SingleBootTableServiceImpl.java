@@ -38,7 +38,7 @@ public class SingleBootTableServiceImpl implements SingleBootTableService {
     }
 
     @Override
-    public void addObject(@NonNull SingleBootTable singleBootTable) {
+    public int addObject(@NonNull SingleBootTable singleBootTable) {
         if(StringUtils.isBlank(singleBootTable.getName()) || StringUtils.isBlank(singleBootTable.getCode())){
             throw new VenusException(ResponseMessage.REQUIRED_PARAM_IS_NULL);
         }
@@ -46,7 +46,7 @@ public class SingleBootTableServiceImpl implements SingleBootTableService {
         singleBootTable.setDeleted(false);
         singleBootTable.setCreateTime(new Date());
         singleBootTable.setUpdateTime(new Date());
-        singleBootTableMapper.insert(singleBootTable);
+        return singleBootTableMapper.insert(singleBootTable);
     }
 
     @Override
